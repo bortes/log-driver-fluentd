@@ -11,6 +11,8 @@ services:
         tag: "docker.app"
 
   fluentd:
+    depends_on:
+      - elasticsearch
     build: ./fluentd/
     ports:
       - "24224:24224"
@@ -18,6 +20,8 @@ services:
   elasticsearch:
     cap_add:
       - IPC_LOCK
+    depends_on:
+      - sysctl
     environment:
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
       - bootstrap.memory_lock=true
@@ -42,6 +46,8 @@ services:
     privileged: true
 
   kibana:
+    depends_on:
+      - elasticsearch
     image: docker.elastic.co/kibana/kibana-oss:6.0.0
     ports:
       - "5601:5601"

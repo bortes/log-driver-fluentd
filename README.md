@@ -14,14 +14,14 @@ Lastly [Kibana](https://www.elastic.co/products/kibana) will show centralized lo
 First, build dockerized application with [Gradle](https://gradle.org/):
 
 ```bash
-./app/gradlew build
+./app/gradlew --project-dir=./app build
 ```
 
 
 After that, start all services - except dockerized application:
 
 ```bash
-docker-compose up -d --build fluentd elasticsearch sysctl kibana
+docker-compose up -d --build fluentd kibana
 ```
 
 
