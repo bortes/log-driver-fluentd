@@ -16,6 +16,10 @@ services:
     build: ./fluentd/
     ports:
       - "24224:24224"
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
 
   elasticsearch:
     cap_add:
@@ -38,10 +42,9 @@ services:
         hard: -1
 
   sysctl:
-    environment: 
-      - SYSCTL_KEY=vm.max_map_count
-      - SYSCTL_VALUE=262144
-    image: rawmind/alpine-sysctl:0.1
+    environment:
+      - SYSCTL.VM.MAX_MAP_COUNT=262144
+    image: bortes/sysctl
     network_mode: none
     privileged: true
 

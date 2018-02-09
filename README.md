@@ -37,7 +37,7 @@ Support nanosecond (sub-second precision).
 
 Fluent has a closed [issue](https://github.com/fluent/fluentd/issues/461) for support nanosecond resolution.
 
-[Fluentd v0.14.9](https://github.com/fluent/fluentd/blob/master/CHANGELOG.md) fixes sub-second precision time bug ([issue](https://github.com/fluent/fluentd/issues/1276)).
+[Fluentd](https://github.com/fluent/fluentd/blob/master/CHANGELOG.md) fixes sub-second precision time bug ([issue](https://github.com/fluent/fluentd/issues/1276)).
 
 And [Elasticsearch plugin for Fluentd](https://github.com/uken/fluent-plugin-elasticsearch) have two pull request that resolve nanosecond: [#223](https://github.com/uken/fluent-plugin-elasticsearch/pull/223) and [#249](https://github.com/uken/fluent-plugin-elasticsearch/pull/249).
 
